@@ -2,13 +2,13 @@ const projetos = [{
         titulo: 'Meu Portfólio',
         desc: 'Design elegante com suporte a tema escuro.',
         imagem: './src/projeto.png',
-        url: '#'
+        url: 'https://github.com/mariaparecida2026/meu-portfolio'
     },
     {
         titulo: 'Meu Portfólio React',
         desc: 'Estiloso e Moderno.',
         imagem: './src/projeto.png',
-        url: '#'
+        url: 'https://github.com/mariaparecida2026/meu-portfolio-react'
     }
 ];
 

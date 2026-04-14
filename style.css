@@ -1,0 +1,243 @@
+:root {
+    --fundo: #ddffdc;
+    --texto: #1a1a1a;
+    --primaria: #3fa201;
+    --secundaria: #015d12;
+    --painel: #b4ceb3;
+    --borda: rgba(181, 155, 97, 0.2);
+    --sombra: rgba(30, 42, 68, 0.08);
+    --transicao: all 0.3s ease-in-out;
+}
+
+body.escuro {
+    --fundo: #0f141e;
+    --texto: #f1f1f1;
+    --primaria: #8ad4a5;
+    --secundaria: #2c3e50;
+    --painel: rgba(255, 255, 255, 0.05);
+    --borda: rgba(212, 188, 138, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    transition: var(--transicao);
+}
+
+.efeito-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 0% 0%, var(--secundaria) 0%, transparent 35%), radial-gradient(circle at 100% 100%, var(--primaria) 0%, transparent 35%);
+    opacity: 0.12;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primaria);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: var(--primaria);
+}
+
+#botao-tema {
+    background: var(--secundaria);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicao);
+}
+
+.cartao-apresentacao {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 40px var(--sombra);
+}
+
+.foto-perfil img {
+    width: 260px;
+    height: 260px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 10px 10px 0px var(--primaria);
+}
+
+.conteudo-texto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--secundaria);
+}
+
+body.escuro .conteudo-texto h1 {
+    color: var(--primaria);
+}
+
+.cabecalho-secao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+}
+
+.cabecalho-secao h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.linha {
+    flex-grow: 1;
+    height: 1px;
+    background: var(--primaria);
+    opacity: 0.3;
+}
+
+.grade-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.cartao-projeto {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 25px;
+    transition: var(--transicao);
+}
+
+.cartao-projeto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px var(--sombra);
+}
+
+.capa-projeto {
+    width: 100%;
+    height: 180px;
+    background: rgba(0, 0, 0, 0.05);
+    /* Placeholder */
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.link-projeto {
+    color: var(--primaria);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 15px;
+}
+
+.cartao-contato {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.redes-sociais a {
+    font-size: 2rem;
+    color: var(--primaria);
+    transition: var(--transicao);
+}
+
+.redes-sociais a:hover {
+    transform: scale(1.2);
+    color: var(--secundaria);
+}
+
+.rodape {
+    padding: 50px;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 850px) {
+    .cartao-apresentacao {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .grade-projetos {
+        grid-template-columns: 1fr;
+    }
+    .foto-perfil img {
+        width: 200px;
+        height: 200px;
+    }
+    .barra-navegacao {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
